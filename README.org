@@ -1,9 +1,10 @@
 #+TITLE: My Scripts
+#+PROPERTY: header-args :tangle-mode (identity #o555) :mkdirp yes
 
 * git
 ** time travelling
 
-   #+BEGIN_SRC sh :tangle git-lord :tangle-mode (identity #o555)
+   #+BEGIN_SRC sh :tangle bin/git-lord
      #!/usr/bin/env zsh
      timestamp=`gdate -R --date "$1 hour"`
      echo $timestamp
