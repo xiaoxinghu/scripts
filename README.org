@@ -1,0 +1,14 @@
+#+TITLE: My Scripts
+
+* git
+** time travelling
+
+   #+BEGIN_SRC sh :tangle git-lord :tangle-mode (identity #o555)
+     #!/usr/bin/env zsh
+     timestamp=`gdate -R --date "$1 hour"`
+     echo $timestamp
+     if read -q "REPLY?To change the last commit time to $timestamp?[y/N]"; then
+         echo ""
+         GIT_COMMITTER_DATE=$timestamp git commit --amend --date $timestamp
+     fi
+   #+END_SRC
